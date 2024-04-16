@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+if [ -z "$1" ]
+ then
+echo ERROR:No input File supplied
+    exit 
+fi
+rm -r /home/sarwar/fasta2lineage/tmp 2>/dev/null
+mkdir /home/sarwar/fasta2lineage/tmp
+blastn -db /home/sarwar/fasta2lineage/database/nt -query $1 -out /home/sarwar/fasta2lineage/tmp/$1_output -outfmt 7 -evalue 1e-20 -max_target_seqs 1 -num_threads 60
+/home/sarwar/fasta2lineage/bin/hash_seq_lineage.pl $1 /home/sarwar/fasta2lineage/tmp/$1_output /home/sarwar/fasta2lineage/lib/nucl_gb.accession2taxid /home/sarwar/fasta2lineage/lib/ncbi_lineages_2021-04-18.csv
+rm -r /home/sarwar/fasta2lineage/tmp 2>/dev/null

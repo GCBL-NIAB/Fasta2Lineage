@@ -1,0 +1,56 @@
+
+#################### Prerequisite ######################
+
+install ncbitax2lin through python3.7 :- pip3 install -U ncbitax2lin
+install NCBI-blast (if not installed)
+
+
+
+####################  Installation ###################### 
+
+Download the package "fasta2lineage.tar.gz"
+extract the downloaded package by running command :- "tar -xzvf fasta2lineage.tar.gz"
+
+move to fasta2lineage directory :- cd fasta2lineage
+
+
+Download  taxonomy files from NCBI:-
+wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
+mkdir -p lib && tar zxf taxdump.tar.gz -C ./lib
+ncbitax2lin --nodes-file lib/nodes.dmp --names-file lib/names.dmp
+gunzip ncbi_lineages_2021-05-26.csv.gz ./lib/
+
+wget  https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz 
+gunzip nucl_gb.accession2taxid.gz ./lib/
+
+
+
+# If the NT database is already available on the system, skip to the configuration section and provide a path into the "configuration file". 
+otherwise, create NT blast database :-
+
+wget https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz 
+gunzip nt.gz
+makeblastdb -in nt -input_type fasta -dbtype nucl -max_file_sz 4000000000 -out ./database/nt
+rm nt
+
+####################  Configuration ###################### 
+
+Open configuration file and make changes in "parameter section" if databases are already downloaded or other parameters as per available computational resources
+
+run "perl configuration.pl"
+
+
+############# Run the Fasta2lineage ######################
+
+run the following command in working directory (~/fasta2lineage/):
+ 
+./fasta2lineage query.fasta > "save_your_output.txt" 
+
+  
+
+
+
+
+
+
+

@@ -23,7 +23,7 @@ print FILE "then\necho ERROR:No input File supplied\n    exit \nfi\n";
 print FILE "rm -r $fasta2lineage/tmp 2>/dev/null\n";
 print FILE "mkdir $fasta2lineage/tmp\n";
 print FILE "blastn -db $nt_database -query \$1 -out $fasta2lineage/tmp/\$1_output -outfmt 7 -evalue $e_value -max_target_seqs $max_target_seqs -num_threads $thread\n";
-print FILE "$fasta2lineage/bin/hash_seq_lineage.pl \$1 $fasta2lineage/tmp/\$1_output $fasta2lineage/lib/nucl_gb.accession2taxid $fasta2lineage/lib/ncbi_lineages_2021-04-18.csv\n";                  
+print FILE "$fasta2lineage/bin/hash_seq_lineage.pl \$1 $fasta2lineage/tmp/\$1_output $fasta2lineage/lib/nucl_gb.accession2taxid $fasta2lineage/lib/ncbi_lineages.csv\n";                  
 
 
  print FILE "rm -r $fasta2lineage/tmp 2>/dev/null\n";

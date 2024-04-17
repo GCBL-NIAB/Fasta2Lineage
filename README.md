@@ -17,7 +17,9 @@
 * Download using git clone
 
 > git clone --recursive https://github.com/GCBL-NIAB/Fasta2Lineage.git
-
+<br/>
+<br/>
+<br/>
 
 > cd Fasta2Lineage
 

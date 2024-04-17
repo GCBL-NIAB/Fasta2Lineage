@@ -2,7 +2,7 @@
 <br/>
 
 #### 1. ncbitax2lin
-> If not, install using **pip3 install -U ncbitax2lin** (>python3.7 required)
+> install using **pip3 install -U ncbitax2lin** (>python3.7 required)
 #### 2. NCBI-BLAST
 
 # Installation
@@ -53,7 +53,7 @@
 # Configuration
 <br/>
 
-* Open the configuration file and make changes in the "parameter section" if databases are already downloaded or other parameters as per available computational resources
+* Open the configuration file and make changes in the "parameter section". Provide path of NT database if database are already available and other parameters as per available computational resources.
 
 
 > perl configuration.pl

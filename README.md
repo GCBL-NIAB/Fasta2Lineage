@@ -30,16 +30,16 @@
 
 > ncbitax2lin --nodes-file lib/nodes.dmp --names-file lib/names.dmp
 
-> gunzip ncbi_lineages_2021-05-26.csv.gz ./lib/
+> gunzip ncbi_lineages_\*.csv.gz && mv ncbi_lineages_\*.csv ./lib/ncbi_lineages.csv                   
 
 > wget  https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
 
-> gunzip nucl_gb.accession2taxid.gz ./lib/
+> gunzip nucl_gb.accession2taxid.gz && mv nucl_gb.accession2taxid ./lib/
 
 
 ### If the NT database is downloaded in the system, go to the configuration section and provide a path in **configuration file**.
 
-#### Else create NT BLAST database 
+#### Otherwise create NT BLAST database 
 > mkdir database && cd database
 
 > wget https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz

@@ -63,5 +63,8 @@
 
 > fasta2lineage input.fasta > output.fasta
 
+<br/>
+<br/>
 
+![Alt text](https://github.com/GCBL-NIAB/Fasta2Lineage/blob/main/pangenome_short_reads.jpg)
 

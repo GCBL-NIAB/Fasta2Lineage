@@ -39,7 +39,7 @@
 
 ### If the NT database is downloaded in the system, go to the configuration section and provide a path in **configuration file**.
 
-#### Otherwise create NT BLAST database 
+#### Otherwise create an NT BLAST database 
 > mkdir database && cd database
 
 > wget https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz

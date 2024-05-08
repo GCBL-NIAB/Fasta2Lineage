@@ -17,7 +17,7 @@ move to fasta2lineage directory :- cd Fasta2Lineage
 Download  taxonomy files from NCBI:-
 wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
 mkdir -p lib && tar zxf taxdump.tar.gz -C ./lib
-ncbitax2lin --nodes-file lib/nodes.dmp --names-file lib/names.dmp
+ncbitax2lin --nodes-file ./lib/nodes.dmp --names-file ./lib/names.dmp
 gunzip ncbi_lineages_2021-05-26.csv.gz ./lib/
 
 wget  https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz 
@@ -29,7 +29,7 @@ gunzip nucl_gb.accession2taxid.gz ./lib/
 otherwise, create NT blast database :-
 
 wget https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nt.gz 
-gunzip nt.gz
+mkdir -p database && gunzip nt.gz
 makeblastdb -in nt -input_type fasta -dbtype nucl -max_file_sz 4000000000 -out ./database/nt
 rm nt
 

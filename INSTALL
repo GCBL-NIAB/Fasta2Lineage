@@ -8,10 +8,10 @@ install NCBI-blast (if not installed)
 
 ####################  Installation ###################### 
 
-Download the package "fasta2lineage.tar.gz"
-extract the downloaded package by running command :- "tar -xzvf fasta2lineage.tar.gz"
+Download the package "Fasta2Lineage.tar.gz"
+extract the downloaded package by running command :- "tar -xzvf Fasta2Lineage.tar.gz"
 
-move to fasta2lineage directory :- cd fasta2lineage
+move to fasta2lineage directory :- cd Fasta2Lineage
 
 
 Download  taxonomy files from NCBI:-
